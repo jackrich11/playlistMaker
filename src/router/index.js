@@ -9,7 +9,10 @@ const routes = [
   {
     path: '/',
     name: 'Browse',
-    component: Browse
+    component: Browse,
+    meta: {
+      title: "Playlist Maker",
+    }
   },
   {
     path: '/about',
@@ -19,7 +22,8 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: About
     //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  },
+  
 ]
 
 const router = new VueRouter({
