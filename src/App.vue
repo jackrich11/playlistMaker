@@ -12,7 +12,7 @@
     </div>
     <router-view/>
     <div id="footer">
-      <p>Jack Richardson &nbsp; TJ Barden</p>
+      <p>Jack Richardson &#38; TJ Barden</p>
       <a href="https://github.com/jackrich11/playlistMaker.git" target="_blank">Github Repository</a>
       <div v-show="false">Icons made by <a href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </div>
