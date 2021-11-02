@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <title>Playlist Maker</title>
     <div id="nav">
       <div id="logo-header">
         <img src="./assets/whitemusicnote.png"/>
