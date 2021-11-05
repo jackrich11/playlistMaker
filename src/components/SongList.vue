@@ -22,8 +22,9 @@
                             <p>Artist: {{song.artist}}</p>
                             <p>Album: {{song.album}}</p>
                         </div>
-                        <div id="checkbox-box">
-                            <input id="add-box" type="checkbox" @click="checkSong(song)">
+                        <div v-bind:checked="true" id="checkbox-box">
+                            <!--<input id="add-box" type="checkbox" @click="checkSong(song)">-->
+                            <p id="add-box" @click="checkSong(song)">+</p>
                         </div>
                     </div>                   
                 </div>
@@ -42,6 +43,7 @@ export default {
       return {
           playlist: '',
           selectedSongs: [],
+          isReset: true
 
       }
   },
@@ -69,6 +71,8 @@ export default {
           {
             this.$root.$data.playlists.push(newPlaylist);
             this.playlist = '';
+            this.selectedSongs = [];
+            this.isReset = false;
           }
 
           console.log(newPlaylist);
@@ -81,6 +85,18 @@ export default {
     * {
         padding: 0;
         margin: 0;
+    }
+
+    #add-box {
+        font-size: large;
+    }
+
+    #add-box:hover {
+        color: #F08700;
+        border-color: #F08700;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
     }
 
     #song-list {
@@ -106,7 +122,6 @@ export default {
 
     #total-info {
         display: flex;
-        align-content: center;
     }
 
     #input-box {
@@ -125,5 +140,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         margin-left: 15px;
+        padding: 0 5px;
+        cursor: pointer;
     }
 </style>
