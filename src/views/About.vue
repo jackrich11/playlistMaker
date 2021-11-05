@@ -1,4 +1,5 @@
 <template>
+<div id="wrapper">
   <div class="about">
     <h1>Welcome to 帅阿飞 Music!</h1>
     <p class = "quote">“Music is life itself.”</p>
@@ -12,6 +13,7 @@
     <li>Get to listening! You can view all your created playlists <router-link to ="/playlists"> here</router-link>. (And don't worry if you forgot one of your favorite songs! You can always add to a playlist later.)</li>
     </ol>
   </div>
+</div>
 </template>
 
 <style>
