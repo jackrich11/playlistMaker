@@ -4,12 +4,14 @@
         <div id="input-box">
             <input v-model="playlist" placeholder="Playlist Name">
             <button v-if="playlist === ''" id="add-playlist">Add {{playlist}}</button>
-            <button v-else id="add-playlist">Add '{{playlist}}' to your list</button>
+            <button v-else id="add-playlist" @click="addPlaylist">Add '{{playlist}}' to your list</button>
         </div>
 
         <p v-for="select in selectedSongs" :key="select.title"><strong>{{select.title}}</strong></p>
         <p v-if="selectedSongs.length === 0">Select some songs to get started!</p>
+        <p v-else-if="selectedSongs.length === 1"><em>(so far you have a total of {{selectedSongs.length}} song)</em>:</p>
         <p v-else><em>(so far you have a total of {{selectedSongs.length}} songs)</em>:</p>
+
         <div id="song-list">
             <div v-for="song in songs" :key="song.title">
                 <div id="song-box">
@@ -39,7 +41,8 @@ export default {
   data() {
       return {
           playlist: '',
-          selectedSongs: []
+          selectedSongs: [],
+
       }
   },
   methods: {
@@ -55,6 +58,21 @@ export default {
               this.selectedSongs.splice(songIndex, 1);
           }
       },
+      addPlaylist()
+      {
+          let newPlaylist = {
+              name: this.playlist,
+              songs: this.selectedSongs
+          }
+
+          if(this.selectedSongs.length !== 0)
+          {
+            this.$root.$data.playlists.push(newPlaylist);
+            this.playlist = '';
+          }
+
+          console.log(newPlaylist);
+      }
   }
 }
 </script>

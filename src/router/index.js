@@ -2,17 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Browse from '../views/Browse.vue'
 import About from '../views/About.vue'
+import Playlists from '../views/Playlists.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/browse',
     name: 'Browse',
     component: Browse,
-    meta: {
-      title: "Playlist Maker",
-    }
   },
   {
     path: '/about',
@@ -23,6 +21,11 @@ const routes = [
     component: About
     //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
+  {
+    path: '/playlists',
+    name: Playlists,
+    component: Playlists
+  }
   
 ]
 

@@ -7,8 +7,8 @@
         <h1>PlaylistMaker</h1>
       </div>
       <div id="nav-links">
-        <router-link to="/">Browse</router-link> |
-        <router-link to="/browse">Playlists</router-link>
+        <router-link to="/browse">Browse</router-link> |
+        <router-link to="/playlists">Playlists</router-link>
       </div>
     </div>
     <router-view/>
