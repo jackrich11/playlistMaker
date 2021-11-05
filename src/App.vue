@@ -9,7 +9,7 @@
       <div id="nav-links">
         <router-link to="/browse">Browse</router-link> |
         <router-link to="/">About</router-link> |
-        <router-link to="/browse">Playlists</router-link>
+        <router-link to="/playlists">Playlists</router-link>
       </div>
     </div>
     <router-view/>
