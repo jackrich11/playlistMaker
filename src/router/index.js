@@ -8,11 +8,6 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/browse',
-    name: 'Browse',
-    component: Browse,
-  },
-  {
     path: '/',
     name: 'About',
     // route level code-splitting
@@ -20,6 +15,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: About
     //component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/browse',
+    name: 'Browse',
+    component: Browse,
   },
   {
     path: '/playlists',
