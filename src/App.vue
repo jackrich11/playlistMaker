@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <title>Playlist Maker</title>
+    <title>帅阿飞 Music</title>
     <div id="nav">
       <div id="logo-header">
         <img src="./assets/whitemusicnote.png"/>
@@ -8,6 +8,7 @@
       </div>
       <div id="nav-links">
         <router-link to="/">Browse</router-link> |
+        <router-link to="/about">About</router-link>
         <router-link to="/browse">Playlists</router-link>
       </div>
     </div>
