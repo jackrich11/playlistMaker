@@ -25,7 +25,7 @@
                             <p>Artist: {{song.artist}}</p>
                             <p>Album: {{song.album}}</p>
                         </div>
-                        <div v-bind:checked="true" id="checkbox-box">
+                        <div id="checkbox-box">
                             <p id="add-box" @click="checkSong(song)">+</p>
                         </div>
                     </div>                   
@@ -51,16 +51,16 @@ export default {
   },
   methods: {
       checkSong(song) {
-          if(!this.selectedSongs.includes(song))
-          {
+          //if(!this.selectedSongs.includes(song))
+          //{
             console.log(`Adding ${song.title} to list.`);
             this.selectedSongs.push(song);
-          } 
-          else
-          {
-              let songIndex = this.selectedSongs.indexOf(song);
-              this.selectedSongs.splice(songIndex, 1);
-          }
+          //} 
+          //else
+          //{
+              //let songIndex = this.selectedSongs.indexOf(song);
+              //this.selectedSongs.splice(songIndex, 1);
+          //}
       },
       addPlaylist()
       {
@@ -81,6 +81,7 @@ export default {
       },
       removeSong(select)
       {
+          console.log("Removing song");
           let songIndex = this.selectedSongs.indexOf(select);
           if(songIndex > -1)
           {
