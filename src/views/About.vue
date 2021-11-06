@@ -3,25 +3,27 @@
   <div class="about">
       <br>
     <h1>Welcome to 帅阿飞 Music!</h1>
-    <p class = "quote">“Music is life itself.”</p>
+    
+    <hr>
   </div>
-<br>
-<br>
-<br>
-    <h3>How to use this service:</h3>
+  <div id="directions">
+    <h1>How to use this service:</h1>
     <ol class = "list">
-    <li>Browse for your favorite music in our <router-link to ="/browse"> Music Library</router-link></li>
-    <li>Select the songs you want in your new playlist.</li>
-    <li>Name your new playlist and click "Add".</li>
-    <li>Get to listening! You can view all your created playlists <router-link to ="/playlists"> here</router-link>.</li>
+      <li>Browse for your favorite music in our <router-link to ="/browse"> Music Library</router-link></li>
+      <li>Select the songs you want in your new playlist.</li>
+      <li>Name your new playlist and click "Add".</li>
+      <li>Get to listening! You can view all your created playlists <router-link to ="/playlists"> here</router-link>.</li>
     </ol>
+    <hr>
+  </div>
+  <p class = "quote">“Music is life itself.”</p>
 </div>
 </template>
 
 <style>
 .list {
     list-style-type: decimal !important;
-    margin-bottom: 10%;
+    margin-bottom: 3%;
         list-style-position: inside;
         width: 100vw;
   position: relative;
@@ -38,6 +40,29 @@ li {
         float: center;
         width: 50%;
         text-align: center;
+}
+
+.about {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.about hr {
+  margin-top: 10px;
+}
+
+#directions hr {
+  width: 50%;
+  margin: auto;
+}
+
+#directions * {
+  font-size: larger;
+}
+
+.quote {
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 </style>
                                                                              
