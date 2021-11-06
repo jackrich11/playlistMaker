@@ -7,7 +7,10 @@
             <button v-else id="add-playlist" @click="addPlaylist">Add '{{playlist}}' to your list</button>
         </div>
 
-        <p v-for="select in selectedSongs" :key="select.title"><strong>{{select.title}}</strong></p>
+        <div v-for="select in selectedSongs" :key="select.title" id="selected-list">
+            <p ><strong>{{select.title}}</strong></p>
+            <p id="remove-song" @click="removeSong(select)">x</p>
+        </div>
         <p v-if="selectedSongs.length === 0">Select some songs to get started!</p>
         <p v-else-if="selectedSongs.length === 1"><em>(so far you have a total of {{selectedSongs.length}} song)</em>:</p>
         <p v-else><em>(so far you have a total of {{selectedSongs.length}} songs)</em>:</p>
@@ -23,7 +26,6 @@
                             <p>Album: {{song.album}}</p>
                         </div>
                         <div v-bind:checked="true" id="checkbox-box">
-                            <!--<input id="add-box" type="checkbox" @click="checkSong(song)">-->
                             <p id="add-box" @click="checkSong(song)">+</p>
                         </div>
                     </div>                   
@@ -76,6 +78,14 @@ export default {
           }
 
           console.log(newPlaylist);
+      },
+      removeSong(select)
+      {
+          let songIndex = this.selectedSongs.indexOf(select);
+          if(songIndex > -1)
+          {
+            this.selectedSongs.splice(songIndex, 1);
+          }
       }
   }
 }
@@ -97,6 +107,18 @@ export default {
         border-style: solid;
         border-width: 1px;
         border-radius: 5px;
+    }
+
+    #remove-song:hover {
+        color: #F08700;
+        text-decoration: underline;
+    }
+
+    #selected-list {
+        display: flex;
+        width: 15%;
+        margin: auto;
+        justify-content: space-between;
     }
 
     #song-list {
